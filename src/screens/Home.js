@@ -4,12 +4,16 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles/HomeStyle';
 import Icon from 'react-native-vector-icons/Ionicons'; // İkonları kullanabilmek için FontAwesome'u içe aktarıyoruz
-import Sound from 'react-native-sound'; // `react-native-sound`'u içe aktarın
+// import Sound from 'react-native-sound'; // `react-native-sound`'u içe aktarın
+import PushNotification from 'react-native-push-notification';
 const DriverHome = ({ navigation }) => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [driverDetails, setDriverDetails] = useState({});
-  const [prevOrderCount, setPrevOrderCount] = useState(0); // Önceki sipariş sayısını takip etmek için bir state tanımlayın
+  const [prevOrderCount, setPrevOrderCount] = useState(0);
+
+ 
+
   useEffect(() => {
     fetchDriverDetails(); // Sürücü detaylarını al
     fetchOrders(); // Siparişleri al
@@ -162,3 +166,5 @@ const DriverHome = ({ navigation }) => {
 };
 
 export default DriverHome;
+
+// en axrinci isleyen
